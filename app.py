@@ -2,7 +2,7 @@ from flask import Flask, render_template_string
 
 app = Flask(__name__)
 
-# Definir los datos
+
 nombres = [
     "Harry Houdini",
     "Newton",
@@ -19,7 +19,6 @@ magos = ["Harry Houdini", "David Blaine", "Teller"]
 cientificos = ["Newton", "Hawking", "Einstein"]
 
 
-# Funciones equivalentes a las de JavaScript
 def hacer_grandioso(magos):
     return [f"El gran {mago}" for mago in magos]
 
@@ -36,10 +35,9 @@ def filtrar_nombres():
 
 @app.route("/")
 def home():
-    # Filtrar y generar las listas
+
     nombres_completos, magos_grandiosos, cientificos_lista, otros = filtrar_nombres()
 
-    # Usar render_template_string para generar el HTML en Python
     return render_template_string(
         """
     <!DOCTYPE html>
